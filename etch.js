@@ -34,8 +34,7 @@ btn.addEventListener("click", () => {
     function createPixel(element, num) {
         element.classList.toggle('pixel');
         element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: red;`);
-        element.textContent = num;
-        console.log(element.textContent)
+        //Set up a "hover" effect to change div color when mouse passes over them
         return element;
     }
     //Append the divs to ".grid-container" (in index.html)
@@ -50,6 +49,4 @@ btn.addEventListener("click", () => {
     //Create the divs with JS
     populateGrid(totalSquares);
 })
-
-//Set up a "hover" effect to change div color when mouse passes over them
 
