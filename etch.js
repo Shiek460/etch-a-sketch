@@ -18,8 +18,7 @@ btn.addEventListener("click", () => {
             verifyGridSize(num = prompt("Not a number. Please use a number value of 100 or less."))
         }
     }
-    verifyGridSize(numOfSquares = prompt("How many squares do you want in your etch-a-sketch?"));
-    border.style.display = "flex";
+    verifyGridSize(numOfSquares = prompt("How many pixels do you want in your etch-a-sketch row?"));
     btn.textContent = "Shake it to reset!";
     squareWidth = (1/numOfSquares)*100 + "%";
     let totalSquares = numOfSquares*numOfSquares;
@@ -33,9 +32,19 @@ btn.addEventListener("click", () => {
         }
     }
     //Style the divs to appear as a grid
-    function createPixel(element) {
+    function createPixel(element, num) {
         element.classList.toggle('pixel');
-        element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: red;`);
+        if (num == 0) {
+            element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: rgb(255, 200, 130); border-top-left-radius: ${numOfSquares}%`);
+        } else if  (num == (numOfSquares - 1)) {
+            element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: rgb(255, 200, 130); border-top-right-radius: ${numOfSquares}%`);
+        } else if (num == ((numOfSquares*numOfSquares) - numOfSquares)) {
+            element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: rgb(255, 200, 130); border-bottom-left-radius: ${numOfSquares}%`);
+        } else if (num == (numOfSquares*numOfSquares - 1)) {
+            element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: rgb(255, 200, 130); border-bottom-right-radius: ${numOfSquares}%`);
+        } else {
+            element.setAttribute('style', `width: ${squareWidth}; height: ${squareWidth}; background-color: rgb(255, 200, 130);`);
+        }
         return element;
     }
     //Append the divs to ".grid-container" (in index.html)
@@ -43,12 +52,13 @@ btn.addEventListener("click", () => {
         deleteGrid();
         for (let i = 0; i < num; i++) {
             let square = document.createElement('div');
-            createPixel(square);
+            createPixel(square, i);
             container.appendChild(square)
         }
     }
     //Create the divs with JS
     populateGrid(totalSquares);
+    //Set up a "hover" effect to change div color when mouse passes over them
     let colors = document.querySelectorAll('.pixel')
         colors.forEach((color) => {
             let r = (Math.random()*255).toFixed();
@@ -59,5 +69,3 @@ btn.addEventListener("click", () => {
             })
         })
 })
-
-//Set up a "hover" effect to change div color when mouse passes over them

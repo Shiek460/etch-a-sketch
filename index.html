@@ -8,10 +8,21 @@
 </head>
 <body>
     <button class="prompt">Click me to begin!</button>
-    
-    <img class="overlay" src="images/etchasketchlogo.png" alt="Etch-a-Sketch body">
-        <div class="grid-container"></div>
-    </img>
+    <div class="etch-body">
+        <div class="border" class="top">
+            <img class="logo" src="images/logo.jpg" alt="Etch-a-Sketch Logo"></img>
+        </div>
+        <div class="middle">
+            <div class="sidebar"></div>
+            <div class="grid-container"></div>
+            <div class="sidebar"></div>
+        </div>
+        <div class="bottom">
+            <button class="knob"> . </button>
+            <div class="border"></div>
+            <button class="knob"> . </button>
+        </div>
+    </div>
     <script src="etch.js"></script>
 </body>
 </html>

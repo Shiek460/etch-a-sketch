@@ -1,4 +1,4 @@
-.overlay {
+/*.overlay {
     position: fixed;
     display: none;
     width: 100vw;
@@ -7,10 +7,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 0;
     cursor: pointer;
-    transform: rotate(.225deg)
-}
+    transform: rotate(.225deg);
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}*/
 
 body {
     display: flex;
@@ -18,10 +21,67 @@ body {
     align-items: center;
 }
 
+.prompt {
+    margin: 15px;
+}
+
+.etch-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 100%;
+    background-color: red;
+    border-radius: 3%;
+}
+
+.top {
+    display: flex;
+    height: 80px;
+    width: 100%;
+}
+
+.logo {
+    height: 80px;
+    width: 100%
+}
+
+.border, .sidebar, .bottom, .top {
+    background-color: red;
+}
+
+.middle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sidebar {
+    width: 90px;
+}
+
 .grid-container {
     display: flex;
-    height: 60vh;
-    width: 75vw;
-    margin: 125px 20vw;
+    flex: auto;
+    height: 59vh;
     flex-flow: row wrap;
+    background-color: beige;
+    border-radius: 3%;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 14vh;
+    width: 100%;
+}
+
+.knob {
+    margin: 1%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    color: rgb(225, 225, 225);
 }
