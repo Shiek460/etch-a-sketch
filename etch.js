@@ -11,14 +11,13 @@ let numOfSquares = 0;
 btn.addEventListener("click", () => {
     //Limit input number to 100
     function verifyGridSize(num) {
-        //switch case - is number or is greater than 100 **ADD THIS**
         if (num > 100) {
             verifyGridSize(num = prompt("Too many squares. Please choose a number up to 100 to prevent crashing."));
         } else if (isNaN(parseInt(num))) {
             verifyGridSize(num = prompt("Not a number. Please use a number value of 100 or less."))
         }
     }
-    verifyGridSize(numOfSquares = prompt("How many pixels do you want in your etch-a-sketch row?"));
+    verifyGridSize(numOfSquares = prompt("Choose the resolution for your etch-a-sketch. Screen will change to be `your_number X your_number` pixels"));
     btn.textContent = "Shake it to reset!";
     squareWidth = (1/numOfSquares)*100 + "%";
     let totalSquares = numOfSquares*numOfSquares;
