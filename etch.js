@@ -60,6 +60,7 @@ btn.addEventListener("click", () => {
     populateGrid(totalSquares);
     //Set up a "hover" effect to change div color when mouse passes over them
     let colors = document.querySelectorAll('.pixel')
+        //Make each color a random rgb value when mouseover
         colors.forEach((color) => {
             let r = (Math.random()*255).toFixed();
             let g = (Math.random()*255).toFixed();
@@ -67,5 +68,6 @@ btn.addEventListener("click", () => {
             color.addEventListener('mouseenter', () => {
                 color.style.backgroundColor = `rgb(${r} ${g} ${b})`;
             })
+
         })
 })
