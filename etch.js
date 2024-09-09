@@ -57,16 +57,23 @@ btn.addEventListener("click", () => {
     }
     //Create the divs with JS
     populateGrid(totalSquares);
+    let colorType = document.querySelector('select#color-type');
+    let choice = colorType.value;
     //Set up a "hover" effect to change div color when mouse passes over them
-    let colors = document.querySelectorAll('.pixel')
+    let colors = document.querySelectorAll('.pixel');
         //Make each color a random rgb value when mouseover
-        colors.forEach((color) => {
+    colors.forEach((color) => {
+        if (choice == 'black') {
+            color.addEventListener('mouseenter', () => {
+                color.style.backgroundColor = 'rgb(0 0 0)';
+            })
+        } else {
             let r = (Math.random()*255).toFixed();
             let g = (Math.random()*255).toFixed();
             let b = (Math.random()*255).toFixed();
             color.addEventListener('mouseenter', () => {
                 color.style.backgroundColor = `rgb(${r} ${g} ${b})`;
             })
-
-        })
+        }
+    })
 })

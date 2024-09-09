@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="etch.css">
 </head>
 <body>
-    <button class="prompt">Click me to begin!</button>
+    <div class="prompt-area">
+        <button class="prompt">&#x23FB; First, turn me on!</button>
+        <label for="color-type">Choose your pixel color:</label>
+        <select name="color-type" id="color-type">
+            <option value="random">Random</option>
+            <option value="black" selected="selected">Black</option>
+        </select>
+        <p>, "shake!" ⇐ to apply your new color</p>
+    </div>
     <div class="etch-body">
         <div class="border" class="top">
             <img class="logo" src="images/logo.jpg" alt="Etch-a-Sketch Logo"></img>
