@@ -1,6 +1,7 @@
 .prompt-area {
     display: flex;
     gap: 10px;
+    wrap: nowrap;
     align-items: center;
 }
 
